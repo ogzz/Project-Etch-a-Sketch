@@ -1,0 +1,28 @@
+.gridCont {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    border: 0.2px solid;
+    grid-template-columns: repeat(var(--size),1fr);
+    grid-template-columns: repeat(var(--size),1fr);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+
+}
+.gridCont>div{
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+}
+.buttonContainer{
+    display:flex;
+    justify-content: center;
+    gap: 50px 40px;
+    
+}
+button{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+}

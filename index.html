@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<main>
+
+  <head>
+    <link rel="stylesheet" href=index.css>
+  </head>
+
+  <body onload="addGrid();">
+    <div class ="buttonContainer">
+      <button onclick="cellCleaner()">Clear</button>
+      <button onclick="promptGrid()">Grid Size</button>
+    </div>
+    <div class="gridCont"></div>
+    <script>
+      let myCont = document.getElementsByClassName("gridCont")[0];
+      let size = 16;
+
+      function addGrid() {
+       
+          while(myCont.firstChild){
+            myCont.removeChild(myCont.firstChild);
+          }
+
+        for (let j = 0; j < size ** 2; j++) {
+          const current_Row = document.createElement("div");
+
+          current_Row.setAttribute("class", "cells");
+          current_Row.addEventListener('mouseenter', () => {
+            current_Row.style.backgroundColor = 'black';
+          });
+          myCont.appendChild(current_Row);
+          document.documentElement.style.setProperty('--size', size);
+
+
+        }
+
+
+      }
+
+      function cellCleaner() {
+        for (i = 0; i < myCont.children.length; i++) {
+          myCont.children[i].style.backgroundColor = 'white';
+        }
+
+      }
+      function promptGrid(){
+       size=prompt();
+       cellCleaner();
+       addGrid();
+       console.log(size);
+      }
+    </script>
+
+  </body>
+</main>
